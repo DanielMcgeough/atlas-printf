@@ -16,7 +16,7 @@
 
 int _printf(const char *format, ...);
 char printf_s(char * str);
-char printf_c(char str);
+int printf_c(int str);
 char printf_format(char str);
 int _putchar(char c);
 
