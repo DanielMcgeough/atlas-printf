@@ -25,7 +25,7 @@ char printf_s(char str)
  * @str: a string passed in
  * Return: returns a char
  */
-char printf_%(char str)
+char printf_spec(char str)
 {
 	return (str);
 }
