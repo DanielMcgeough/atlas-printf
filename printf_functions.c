@@ -5,9 +5,9 @@
  * @str: a string
  * Return: returns a char
  */
-char printf_c(char str)
+char printf_ch(char c)
 {
-	return (str);
+	return (c);
 }
 
 /**
@@ -15,7 +15,7 @@ char printf_c(char str)
  * @str: a string passed in
  * Return: returns a char
  */
-char printf_s(char str)
+char* printf_str(const char* str)
 {
 	return (str);
 }
@@ -25,8 +25,8 @@ char printf_s(char str)
  * @str: a string passed in
  * Return: returns a char
  */
-char printf_spec(char str)
+char printf_spec(char* format )
 {
-	return (str);
+	return (format);
 }
 
