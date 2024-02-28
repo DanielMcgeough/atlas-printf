@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int size;
 	va_list args;
 	char str;
-	int handler;
+	int *handler;
 /* if format argument is NULL, return -1 */
 	if (format == NULL)
 		return (-1);
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		return (0);
 /* initialize list named args, setting handler = to size */
 	va_start(args, format);
-	size = handler(format, args);
+	size = *handler(format, args);
 /* clean up the list */
 	va_end(args);
 /* check for end of argument */
@@ -31,24 +31,24 @@ int _printf(const char *format, ...)
 
 	return (size);
 		}
-/* created functions to return char*/
+/* created functions to return char */
 char printf_ch(char c) 
 {
 	return (c);
 }
-/* created function to return string*/
+/* created function to return string */
 char* printf_str(const char* str)
 {
 	return (str);
 {
 /* created function to return format specifier */
-char printf_%(const char* format)
+char printf_spec(const char* format)
 {
 	return (format)
 }
 va_list args;
 va_start(args, format);
-/* looping through string to find format specifiers*/
+/* looping through string to find format specifiers */
 	while (*format) 
 	{
 		if (*format == '%' && *(format + 1) != '\0'){
@@ -62,7 +62,7 @@ va_start(args, format);
 			}
 			else if(*(format) == '%')
 			{
-				printf_%((char)va_arg(args, char));
+				printf_spec((char)va_arg(args, char));
 			}
 		}else
 					format ++;
