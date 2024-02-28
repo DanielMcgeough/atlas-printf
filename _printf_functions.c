@@ -18,7 +18,7 @@ int printf_ch(va_list c)
  * @str: a string passed in
  * Return: returns a char
  */
-int print_s(va_list s)
+int print_str(va_list s)
 {
 	int j;
 	char *str = va_arg(s, char *);

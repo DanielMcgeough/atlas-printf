@@ -16,16 +16,16 @@ int _printf(const char *format, ...)
  if format argument is NULL, return -1 
 	if (format == NULL)
 		return (-1);
-/* calculate size of string, if <= 0, return 0 
+ calculate size of string, if <= 0, return 0 
 	size = strlen(format);
 	if (size <= 0)
 		return (0);
-/* initialize list named args, setting handler = to size 
+ initialize list named args, setting handler = to size 
 	va_start(args, format);
 	size = *handler(format, args);
-/* clean up the list 
+ clean up the list 
 	va_end(args);
-/* check for end of argument 
+ check for end of argument 
 	str = va_arg(args, char)
 	while ((str != '\0')
 		str++;
