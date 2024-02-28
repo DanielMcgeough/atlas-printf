@@ -35,9 +35,10 @@ int _printf(const char *format, ...)
 */
 int _printf(const char *format, ...)
 {
+	/**
 va_list args;
 va_start(args, format);
-/* looping through string to find format specifiers */
+looping through string to find format specifiers 
 	while (*format) 
 	{
 		if (*format == '%' && *(format + 1) != '\0')
@@ -60,3 +61,4 @@ va_start(args, format);
 			va_end(args);
 			return (0);
 }
+	*/
