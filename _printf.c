@@ -35,7 +35,10 @@ int _printf(const char *format, ...)
 */
 int _printf(const char *format, ...)
 {
-	/**
+	_printf("String to print\n");
+}
+
+/**
 va_list args;
 va_start(args, format);
 looping through string to find format specifiers 
