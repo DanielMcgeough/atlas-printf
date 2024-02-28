@@ -15,9 +15,9 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-char printf_s(char str);
+char printf_s(char * str);
 char printf_c(char str);
-char printf_spec(char str);
+char printf_format(char str);
 int _putchar(char c);
 
 #endif

@@ -43,7 +43,7 @@ va_start(args, format);
 		if (*format == '%' && *(format + 1) != '\0'){
 			if (*(format + 1) == 's') 
 			{
-				printf_s((va_arg(args, char*)));
+				printf_s((va_arg(args, char *)));
 			}
 			else if(*(format + 1) == 'c')
 			{
