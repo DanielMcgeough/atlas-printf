@@ -52,10 +52,11 @@ va_start(args, format);
 			}
 			else if(*(format) == '%')
 			{
-				printf_format((char)va_arg(args, char));
+				printf_format((int)va_arg(args, int));
 			}
 		}else
 					format ++;
 	}
 			va_end(args);
+			return (0);
 }

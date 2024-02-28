@@ -37,7 +37,7 @@ int print_s(va_list s)
  * @str: a string passed in
  * Return: returns a char
  */
-char printf_format(char* format )
+int printf_format(char* format )
 {
 	return (format);
 }
