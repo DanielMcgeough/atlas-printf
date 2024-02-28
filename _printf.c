@@ -6,7 +6,7 @@
  * @...: whatever else we need to pass in
  * Return: returns the number of chars printed
  */
-
+/*
 int _printf(const char *format, ...)
 {
 	int size;
@@ -14,38 +14,25 @@ int _printf(const char *format, ...)
 	char str;
 	int *handler;
 /* if format argument is NULL, return -1 */
-	if (format == NULL)
+/*	if (format == NULL)
 		return (-1);
 /* calculate size of string, if <= 0, return 0 */
-	size = strlen(format);
+/*	size = strlen(format);
 	if (size <= 0)
 		return (0);
 /* initialize list named args, setting handler = to size */
-	va_start(args, format);
+/*	va_start(args, format);
 	size = *handler(format, args);
 /* clean up the list */
-	va_end(args);
+/*	va_end(args);
 /* check for end of argument */
-	while ((str = va_arg(args, char)) != '\0')
+/*	str = va_arg(args, char)
+	while ((str != '\0')
 		str++;
 
 	return (size);
-		}
-/* created functions to return char */
-char printf_ch(char c) 
-{
-	return (c);
 }
-/* created function to return string */
-char* printf_str(const char* str)
-{
-	return (str);
-{
-/* created function to return format specifier */
-char printf_spec(const char* format)
-{
-	return (format)
-}
+*/
 va_list args;
 va_start(args, format);
 /* looping through string to find format specifiers */
