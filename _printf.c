@@ -43,15 +43,15 @@ va_start(args, format);
 		if (*format == '%' && *(format + 1) != '\0'){
 			if (*(format + 1) == 's') 
 			{
-				printf_str((va_arg(args, char*)
+				printf_s((va_arg(args, char*)
 			}
 			else if(*(format + 1) == 'c')
 			{
-				printf_ch((char)va_arg(args, char));
+				printf_c((char)va_arg(args, char));
 			}
 			else if(*(format) == '%')
 			{
-				printf_spec((char)va_arg(args, char));
+				printf_format((char)va_arg(args, char));
 			}
 		}else
 					format ++;

@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * printf_c - prints a character
+ * printf_ch - prints a character
  * @str: a string
  * Return: returns a char
  */
-int printf_ch(va_list c)
+int printf_c(va_list c)
 {
 	char character = (char)va_arg(c, int);
 
@@ -18,16 +18,16 @@ int printf_ch(va_list c)
  * @str: a string passed in
  * Return: returns a char
  */
-int print_str(va_list s)
+int print_s(va_list s)
 {
 	int j;
-	char *str = va_arg(s, char *);
+	char *s = va_arg(s, char *);
 
-	if (str == NULL)
-		str = "(null)";
-	for (j = 0; str[j]; j++)
+	if (s == NULL)
+		s = "(null)";
+	for (j = 0; s[j]; j++)
 	{
-		_putchar(str[j]);
+		_putchar(s[j]);
 	}
 	return (j);
 }
@@ -37,7 +37,7 @@ int print_str(va_list s)
  * @str: a string passed in
  * Return: returns a char
  */
-char printf_spec(char* format )
+char printf_format(char* format )
 {
 	return (format);
 }
