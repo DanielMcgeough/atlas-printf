@@ -30,3 +30,37 @@ int _printf(const char *format, ...)
 
 	return (size)
 		}
+/* this is Danny code */
+char printf_ch(char c) 
+{
+	return (c);
+}
+char* printf_str(const char* str)
+{
+	return (str);
+{
+char printf_%(const char* format)
+{
+	return (format)
+}
+va_list args;
+va_start(args, format;
+
+	while (*format) 
+	{
+		if (*format == '%' && *(format = 1) != '\0'){
+			if (*(format + 1) == 's') 
+			{
+				printf_str((va_arg(args, char*)
+			}
+			if(*(format + 1) == 'c')
+			{
+				printf_ch((char)va_arg(args, int));
+			}
+			if(*(format) == '%')
+			{
+				printf_%((char)va_arg(args, char));
+			}
+		}
+		format ++
+	}
