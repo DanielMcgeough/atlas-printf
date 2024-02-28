@@ -18,5 +18,6 @@ int _printf(const char *format, ...);
 char printf_s(char str);
 char printf_c(char str);
 char printf_spec(char str);
+int _putchar(char c);
 
 #endif
