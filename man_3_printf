@@ -1,0 +1,14 @@
+NAME
+printf
+
+LIBRARY
+N/A
+
+SYNOPSIS
+char printf_ch(char c);
+char* printf_str(const char* str);
+char printf_spec(const char* format);
+int _printf(const char *format, ...);
+
+DESCRIPTION
+This function produces output according to a format. It returns the number of characters printed (excluding the null byte used to end output to strings). It does not reproduce buffer handling of the C library "printf" function. It does not handle flag characters, field width, precision or the length modifiers.
