@@ -40,14 +40,15 @@ va_start(args, format);
 /* looping through string to find format specifiers */
 	while (*format) 
 	{
-		if (*format == '%' && *(format + 1) != '\0'){
+		if (*format == '%' && *(format + 1) != '\0')
+		{
 			if (*(format + 1) == 's') 
 			{
 				printf_s((va_arg(args, char *)));
 			}
 			else if(*(format + 1) == 'c')
 			{
-				printf_c((char)va_arg(args, char));
+				printf_c((int)va_arg(args, int));
 			}
 			else if(*(format) == '%')
 			{
@@ -57,6 +58,4 @@ va_start(args, format);
 					format ++;
 	}
 			va_end(args);
-		}
-	}
 }
