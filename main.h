@@ -14,5 +14,8 @@
 #include <string.h>
 
 int _printf(const char *format, ...);
+char printf_s(char str);
+char printf_c(char str);
+char printf_%(char str);
 
 
