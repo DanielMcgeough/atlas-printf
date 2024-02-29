@@ -44,9 +44,8 @@ int _printf(const char *format, ...)
 
 				while (str[str_len] != '\0')
 					str_len++;
-				printf("setup is correct");
 			        if(str == NULL)
-                                write(1, n, str_len);
+				str = "(null)";
 
 				write(1, str, str_len);
 				chara_print += str_len;
