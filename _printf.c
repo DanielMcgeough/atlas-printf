@@ -6,62 +6,65 @@
  * @...: whatever else we need to pass in
  * Return: returns the number of chars printed
  */
-/**
+
 int _printf(const char *format, ...)
 {
-	int size;
-	va_list args;
-	char str;
-	int *handler;
- if format argument is NULL, return -1 
-	if (format == NULL)
-		return (-1);
- calculate size of string, if <= 0, return 0 
-	size = strlen(format);
-	if (size <= 0)
-		return (0);
- initialize list named args, setting handler = to size 
-	va_start(args, format);
-	size = *handler(format, args);
- clean up the list 
-	va_end(args);
- check for end of argument 
-	str = va_arg(args, char)
-	while ((str != '\0')
-		str++;
+	int chara_print = 0;
+	va_list list_of_args;
 
-	return (size);
-}
-*/
-int _printf(const char *format, ...)
-{
-	_printf("String to print\n");
-}
+	if(format == NULL)
+		return -1;
 
-/**
-va_list args;
-va_start(args, format);
-looping through string to find format specifiers 
-	while (*format) 
+	va_start(list_of_args, format);
+
+	while(*format)
 	{
-		if (*format == '%' && *(format + 1) != '\0')
+		if(*format != '%')
 		{
-			if (*(format + 1) == 's') 
+			write(1, format, 1);
+			chara_print++;
+		}
+		else
+		{
+			format++;
+			if(*format == '\0')	
+				break;
+
+			else if(*format == 'c')
 			{
-				printf_s((va_arg(args, char *)));
+				char c = va_arg(list_of_args, int);
+				write(1, &c, 1);
+				chara_print++;
 			}
-			else if(*(format + 1) == 'c')
+			else if(*format == 's')
 			{
-				printf_c((int)va_arg(args, int));
+				char *str = va_arg(list_of_args, char*);
+				int str_len = 0;
+
+				while (str[str_len] != '\0')
+					str_len++;
+
+				write(1, str, str_len);
+				chara_print += str_len;
 			}
-			else if(*(format) == '%')
+			else if(*format == '%')
 			{
-				printf_format((int)va_arg(args, int));
+				write(1, format, 1);
+				chara_print++;
 			}
-		}else
-					format ++;
+		}
+	format++;
 	}
-			va_end(args);
-			return (0);
+
+	va_end(list_of_args);
+	return chara_print;
 }
-	*/
+
+int main()
+{
+	_printf("%c\n", 'a');
+	_printf("%s\n", "This is tiresome");
+	_printf("%%\n");
+	return 0;
+
+}
