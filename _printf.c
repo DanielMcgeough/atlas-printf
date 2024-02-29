@@ -41,10 +41,10 @@ int _printf(const char *format, ...)
 				char *str = va_arg(list_of_args, char*);
 				int str_len = 0;
 
+				if(str == NULL)
+                                str = "(null)";
 				while (str[str_len] != '\0')
 					str_len++;
-			        if(str == NULL)
-				str = "(null)";
 
 				write(1, str, str_len);
 				chara_print += str_len;
