@@ -40,17 +40,13 @@ int _printf(const char *format, ...)
 			{
 				char *str = va_arg(list_of_args, char*);
 				int str_len = 0;
+				char n = "(null)"
 
 				while (str[str_len] != '\0')
 					str_len++;
-				 if (*str == '\0')
-					{
-				 write (1, "(null)", 6)
-				 }
-				 else if (str_len == 0)
-				 write (1, str_len); 
-				 
- 
+			        if(*str == '\0')
+                                write(1, n, str_len);
+
 				write(1, str, str_len);
 				chara_print += str_len;
 			}
