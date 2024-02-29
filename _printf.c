@@ -59,12 +59,3 @@ int _printf(const char *format, ...)
 	va_end(list_of_args);
 	return chara_print;
 }
-
-int main()
-{
-	_printf("%c\n", 'a');
-	_printf("%s\n", "This is tiresome");
-	_printf("%%\n");
-	return 0;
-
-}
