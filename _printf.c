@@ -43,9 +43,9 @@ int _printf(const char *format, ...)
 
 				while (str[str_len] != '\0')
 					str_len++;
-				 if (str == '\0')
+				 if (*str == '\0')
 					{
-				 write (1, ("null"), 6)
+				 write (1, "(null)", 6)
 				 }
 				 else if (str_len == 0)
 				 write (1, str_len); 
