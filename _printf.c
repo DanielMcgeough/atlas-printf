@@ -43,7 +43,14 @@ int _printf(const char *format, ...)
 
 				while (str[str_len] != '\0')
 					str_len++;
-
+				 if (str == '\0')
+					{
+				 write (1, ("null"), 6)
+				 }
+				 else if (str_len == 0)
+				 write (1, str_len); 
+				 
+ 
 				write(1, str, str_len);
 				chara_print += str_len;
 			}
