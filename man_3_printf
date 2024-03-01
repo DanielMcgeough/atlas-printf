@@ -1,5 +1,5 @@
 NAME
-printf
+_printf
 
 LIBRARY
 N/A
@@ -12,3 +12,20 @@ int _printf(const char *format, ...);
 
 DESCRIPTION
 This function produces output according to a format. It returns the number of characters printed (excluding the null byte used to end output to strings). It does not reproduce buffer handling of the C library "printf" function. It does not handle flag characters, field width, precision or the length modifiers.
+
+RETURN VALUE
+Upon successful return, this function returns the number of characters printed (excluding the null byte used to end output to strings).
+
+OPTIONS
+N/A
+
+EXAMPLES
+char main(char)
+{
+_printf("Hello World/n")
+}
+
+This will print the string "Hello World" followed by a new line.
+
+AUTHOR
+Bret Johnson (co-conspirators: Daniel Mcgeough / Suntha Lucas)
