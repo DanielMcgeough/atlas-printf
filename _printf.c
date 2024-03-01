@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 			write(1, str, str_len);
 			chara_print += str_len;
 		}
-		else if(*(format + 1) == '%')
+		else if(*format == '%')
 		{
 			write(1, format, 1);
 			chara_print++;
