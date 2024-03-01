@@ -1,22 +1,22 @@
 #include "main.h"
 
 /**
- * printf_ch - prints a character
- * @str: a string
- * Return: returns a char
+ * handle_char - prints a character
+ * @c: a char
+ * Return: returns a void
  */
 
 void handle_char(va_list list_of_args, int *chara_print)
 {
-	char c - va_arg(list_of_args, int);
+	char c = va_arg(list_of_args, int);
 	write(1, &c, 1);
 	(*chara_print)++;
 }
 
 /**
- * printf_s - prints a string
+ * handle_str - prints a string
  * @str: a string passed in
- * Return: returns a char
+ * Return: returns a void
  */
 
 void handle_str(va_list list_of_args, int *chara_print)
@@ -32,9 +32,8 @@ void handle_str(va_list list_of_args, int *chara_print)
 }
 
 /**
- * printf_% - prints a format specifier
- * @str: a string passed in
- * Return: returns a char
+ * handle_percent - prints a format specifier
+ * Return: returns a void
  */
 
 void handle_percent(va_list list_of_args, int *chara_print)
