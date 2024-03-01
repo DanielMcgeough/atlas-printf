@@ -1,5 +1,4 @@
 #include "main.h"
-#include "_printf_functions.c"
 
 /**
  * _printf - prints whatever is fed into argument
@@ -12,6 +11,7 @@ int _printf(const char *format, ...)
 {
 	int chara_print = 0;
 	va_list list_of_args;
+
 	if(format == NULL)
 	return -1;
 	va_start(list_of_args, format);
@@ -26,7 +26,9 @@ int _printf(const char *format, ...)
 	{
 		format++;
 		if(*format == '\0')
-		break;
+		{
+			return (chara_print);
+		}
 		else if(*format == 'c')
 		{
 			char c = va_arg(list_of_args, int);
