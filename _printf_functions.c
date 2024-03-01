@@ -1,4 +1,5 @@
 #include "main.h"
+#include "_printf.c"
 
 /**
  * handle_char - prints a character
