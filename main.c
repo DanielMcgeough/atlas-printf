@@ -1,7 +1,19 @@
-#include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
+
+/**
+ * main - Entry point
+ *
+ * Return: 0 on success, error code otherwise
+ */
 int main(void)
 {
-	int chara_print = _printf("%");
-	printf("%d,this is what it says\n",chara_print);
+	int len, len2;
+
+	len = _printf("%");
+	/*len2 = printf("%");*/
+	fflush(stdout);
+	printf("%d\n", len);
+	return (0);
 }
