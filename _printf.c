@@ -27,18 +27,15 @@ int _printf(const char *format, ...) {
             if (*format == '\0')
                 break;
             else {
-                // Mapping format specifiers to corresponding functions
                 FormatHandler handlers[256] = { NULL };
                 handlers['c'] = handle_char;
                 handlers['s'] = handle_str;
                 handlers['%'] = handle_percent;
 
-                // Get the function pointer based on the format specifier
                 FormatHandler handler = handlers[(unsigned char)(*format)];
                 if (handler != NULL) {
                     handler(list_of_args, &chara_print);
                 } else {
-                    // Handle unsupported specifier or other cases
                 }
             }
         }
