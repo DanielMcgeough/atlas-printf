@@ -8,14 +8,13 @@
  * Return: returns the number of chars printed
  */
 
-
 int _printf(const char *format, ...) {
     int chara_print = 0;
-    va_list list_of_args;
 
     if (format == NULL)
         return -1;
 
+    va_list list_of_args;
     va_start(list_of_args, format);
 
     while (*format) {
@@ -36,6 +35,7 @@ int _printf(const char *format, ...) {
                 if (handler != NULL) {
                     handler(list_of_args, &chara_print);
                 } else {
+                    /* Handle unsupported specifier or other cases */
                 }
             }
         }
