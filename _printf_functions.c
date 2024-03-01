@@ -4,7 +4,7 @@
  * printf_ch - prints a character
  * @str: a string
  * Return: returns a char
- */
+
 
 int printf_c(va_list c)
 {
@@ -12,11 +12,11 @@ int printf_c(va_list c)
     _putchar(character);
     return (1);
 }
-/**
+
  * printf_s - prints a string
  * @str: a string passed in
  * Return: returns a char
-*/
+
 int print_s(va_list s)
 {
     int j;
@@ -29,12 +29,12 @@ int print_s(va_list s)
     }
     return (j);
 }
-/**
+
  * printf_% - prints a format specifier
  * @str: a string passed in
  * Return: returns a char
- */
 int printf_format(char* format )
 {
     return (format);
 }
+*/
