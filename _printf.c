@@ -53,10 +53,16 @@ int _printf(const char *format, ...)
 			}
 			else if(*format == 'd' || *format == 'i')
 			{
+<<<<<<< HEAD
 				int *num = va_arg(list_of_args, int);
 
 				write(1, num, 4);
 				chara_print++;
+=======
+				int num = va_arg(list_of_args, int);
+				write(1, &num, 4);
+					chara_print++;
+>>>>>>> 75fafd78411b1215c63db37dd72fd093c38c8a0a
 			}
 		}
 		format++;
