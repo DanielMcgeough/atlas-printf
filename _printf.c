@@ -52,6 +52,12 @@ int _printf(const char *format, ...)
 				chara_print++;
 			}
 			else if(*format == 'd' || *format == 'i')
+			{
+				int *num = va_arg(list_of_args, int);
+
+				write(1, num, 4);
+				chara_print++;
+			}
 		}
 		format++;
 	}
