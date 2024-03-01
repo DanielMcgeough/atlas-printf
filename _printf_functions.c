@@ -38,7 +38,7 @@ void handle_str(va_list list_of_args, int *chara_print)
 
 void handle_percent(va_list list_of_args, int *chara_print)
 {
-	char percent = "%";
-	write (1, &percent, 1);
+	char percentage = "%";
+	write (1, &percentage, 1);
 	(*chara_print)++;
 }
