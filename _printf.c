@@ -46,23 +46,16 @@ int _printf(const char *format, ...)
 				write(1, str, str_len);
 				chara_print += str_len;
 			}
-			else if(*format == '%')
+			else if(*format == '%' && *(format -1) != '%')
 			{
 				write(1, format, 1);
 				chara_print++;
 			}
 			else if(*format == 'd' || *format == 'i')
 			{
-<<<<<<< HEAD
-				int *num = va_arg(list_of_args, int);
-
-				write(1, num, 4);
-				chara_print++;
-=======
-				int num = va_arg(list_of_args, int);
+				char num = va_arg(list_of_args, int);
 				write(1, &num, 4);
-					chara_print++;
->>>>>>> 75fafd78411b1215c63db37dd72fd093c38c8a0a
+				chara_print++;
 			}
 		}
 		format++;
