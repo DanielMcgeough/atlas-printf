@@ -1,4 +1,5 @@
 #include "main.h"
+#include "_printf_functions.c"
 
 /**
  * _printf - prints whatever is fed into argument
@@ -7,57 +8,43 @@
  * Return: returns the number of chars printed
  */
 
-int _printf(const char *format, ...)
-{
-	int chara_print = 0;
-	va_list list_of_args;
 
-	if(format == NULL)
-		return -1;
+int _printf(const char *format, ...) {
+    int chara_print = 0;
+    va_list list_of_args;
 
-	va_start(list_of_args, format);
+    if (format == NULL)
+        return -1;
 
-	while(*format)
-	{
-		if(*format != '%')
-		{
-			write(1, format, 1);
-			chara_print++;
-		}
-		else
-		{
-			format++;
-			if(*format == '\0')	
-				break;
+    va_start(list_of_args, format);
 
-			else if(*format == 'c')
-			{
-				char c = va_arg(list_of_args, int);
-				write(1, &c, 1);
-				chara_print++;
-			}
-			else if(*format == 's')
-			{
-				char *str = va_arg(list_of_args, char*);
-				int str_len = 0;
+    while (*format) {
+        if (*format != '%') {
+            write(1, format, 1);
+            chara_print++;
+        } else {
+            format++;
+            if (*format == '\0')
+                break;
+            else {
+                // Mapping format specifiers to corresponding functions
+                FormatHandler handlers[256] = { NULL };
+                handlers['c'] = handle_char;
+                handlers['s'] = handle_str;
+                handlers['%'] = handle_percent;
 
-				if(str == NULL)
-                                str = "(null)";
-				while (str[str_len] != '\0')
-					str_len++;
+                // Get the function pointer based on the format specifier
+                FormatHandler handler = handlers[(unsigned char)(*format)];
+                if (handler != NULL) {
+                    handler(list_of_args, &chara_print);
+                } else {
+                    // Handle unsupported specifier or other cases
+                }
+            }
+        }
+        format++;
+    }
 
-				write(1, str, str_len);
-				chara_print += str_len;
-			}
-			else if(*format == '%')
-			{
-				write(1, format, 1);
-				chara_print++;
-			}
-		}
-	format++;
-	}
-
-	va_end(list_of_args);
-	return chara_print;
+    va_end(list_of_args);
+    return chara_print;
 }

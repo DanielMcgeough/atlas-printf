@@ -15,9 +15,10 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int printf_s(char * str);
-int printf_c(int str);
-int printf_format(char str);
-int _putchar(char c);
+void handle_char(va_list, int*);
+void handle_str(va_list, int*);
+void handle_percent(va_list, int*);
+
+typedef void (*FormatHandler)(va_list, int*);
 
 #endif
