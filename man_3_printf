@@ -27,5 +27,11 @@ _printf("Hello World/n")
 
 This will print the string "Hello World" followed by a new line.
 
+char main(char)
+{
+_printf( "You %s nothing, John Snow. \n", (char *) 0)
+}
+
+This will print the string "You null nothing, John Snow".
 AUTHOR
 Bret Johnson (co-conspirators: Daniel Mcgeough / Suntha Lucas)
