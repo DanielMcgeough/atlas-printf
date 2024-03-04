@@ -1,0 +1,12 @@
+#include "_printf.c"
+
+/**
+ *_printf.c - print stuff
+ *@format; checked output
+ *
+ *Return: always return 0
+ */
+int main(int argc, char *argv[])
+{
+  _printf("this is booty");
+    }

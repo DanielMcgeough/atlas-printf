@@ -71,3 +71,18 @@ int _printf(const char *format, ...)
 	va_end(list_of_args);
 	return chara_print;
 }
+
+/**
+ *_printf.c - print stuff
+ *@format - checked output
+ *
+ *Return: always return 0
+ */
+int main(int argc, char *argv[])
+{
+        char *str = "This is booty";
+	char character = 'B';
+        _printf("%s\n", str);
+	_printf("%c\n", character);
+	_printf("%%\n");
+}
