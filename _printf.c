@@ -59,11 +59,11 @@ int _printf(const char *format, ...)
 					}
 				}
 			else if (*format == 'd' || *format == 'i')
-			  {
+			{
 			    
-			   chara_print += print_num(list_of_args);
-			    write(1, &chara_print, 4);
-			  }
+			chara_print += print_num(list_of_args);
+			write(1, &chara_print, 4);
+			}
 		}
 		format++;
 	}
