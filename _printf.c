@@ -61,7 +61,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 			  {
 			    int count = 0;
-			    int count = print_num(list_of_args);
+			    count = print_num(list_of_args);
 			  }
 		}
 		format++;
@@ -70,17 +70,3 @@ int _printf(const char *format, ...)
 	return chara_print;
 }
 
-/**
- *_printf.c - print stuff
- *@format - checked output
- *
- *Return: always return 0
- */
-int main(int argc, char *argv[])
-{
-        char *str = "This is booty";
-	char character = 'B';
-        _printf("%s\n", str);
-	_printf("%c\n", character);
-	_printf("%%\n");
-}
