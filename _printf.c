@@ -48,8 +48,17 @@ int _printf(const char *format, ...)
 			}
 			else if(*format == '%')
 			{
-			  write (1, format, 1);
-				chara_print++;
+				if (*(format + 1)== '%') 
+				{
+					write(1, '%', 1);
+					chara_print++;
+					format++;
+				}
+				else
+				{
+					write(1, format, 1);
+					chara_print++;
+				}
 			}
 			else if (*format == 'd' || *format == 'i')
 			  {
