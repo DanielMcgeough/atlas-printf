@@ -19,5 +19,5 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 void customPrint(const char *fromat, ...);
 int main(int argc, char *argv[]);
-
+int print_num(va_list list_of_args);
 #endif

@@ -60,9 +60,8 @@ int _printf(const char *format, ...)
 				}
 			else if (*format == 'd' || *format == 'i')
 			  {
-			  int d = va_arg(list_of_args, int);
-			  write(1, &d, 4);
-			  chara_print++;
+			    int count = 0;
+			    int count = print_num(list_of_args);
 			  }
 		}
 		format++;
