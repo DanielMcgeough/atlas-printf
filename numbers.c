@@ -8,11 +8,11 @@
  */
 int print_num(va_list list_of_args)
 {
-  int num = 0;
-  int i, count = 0;
+  int num = va_arg(list_of_args, int);
+  int i, count;
   int overflow = 0;
   int sign = num < 0 ? -1 : 1;
-  char *str[12];
+  char str[12];
 
   if (num == '0')
     {
@@ -27,12 +27,12 @@ int print_num(va_list list_of_args)
 	    if (overflow)
 	      {
 		str[i] = (num % 10) + '1';
-		num / 10;
+		num /= 10;
 		overflow = 0;
 		i++;
 	      }
 	    str[i] = (num % 10) + '0';
-	    num/10;
+	    num /= 10;
 	  }
       if (sign == -1)
 	{
