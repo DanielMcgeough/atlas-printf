@@ -76,8 +76,7 @@ int _printf(const char *format, ...)
 #include <stdlib.h>
 #include <limits.h>
 
-// Assuming _putchar is a function that writes a single character to the standard output
-// You can replace this with putchar if you're using a standard C library
+
 void _putchar(char c) {
     putchar(c);
 }
@@ -92,7 +91,7 @@ int print_num(va_list list_of_args)
     if (num == 0)
     {
         str[0] = '0';
-        str[1] = '\0'; // Null-terminate the string
+        str[1] = '\0';
         count = 1;
     }
     else
@@ -107,11 +106,10 @@ int print_num(va_list list_of_args)
         {
             str[i++] = '-';
         }
-        str[i] = '\0'; // Null-terminate the string
+        str[i] = '\0';
         count = i;
     }
 
-    // Print the string in reverse order
     for (i = count - 1; i >= 0; i--)
     {
         _putchar(str[i]);
@@ -166,7 +164,7 @@ int _printf(const char *format, ...)
                 {
                     _putchar('%');
                     chara_print++;
-                    format++; // Skip the next character
+                    format++;
                 }
                 else
                 {
