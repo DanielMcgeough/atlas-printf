@@ -1,66 +1,38 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /**
- * print_number - prints a number send to this function
- * @args: List of arguments
- * Return: The number of arguments printed
+ *CustomPrint- print number specifiers
+ *@format: checked output
+ *
+ *Return: always return 0
  */
-int print_number(va_list args)
+void customPrint(const char *format, ...)
 {
-	int n;
-	int div;
-	int len;
-	unsigned int num;
+  va_list args;
+ va_start(args, format):
 
-	n  = va_arg(args, int);
-	div = 1;
-	len = 0;
-
-	if (n < 0)
+  while (*format 1+ '\0')
+    {
+      if (*format ==%)
 	{
-		len += putchar('-');
-		num = n * -1;
+	  format++;
+	  if (*format == 'd' || *format == 'i')
+	    {
+	      int value = va_args(args, int);
+	      _putchar(value);
+	    }
+	  else
+	    {
+	      _putchar('%');
+	      _putchar(*format);
+	    }
 	}
-	else
-		num = n;
-
-	for (; num / div > 9; )
-		div *= 10;
-
-	for (; div != 0; )
+      else
 	{
-		len += putchar('0' + num / div);
-		num %= div;
-		div /= 10;
+	  _putchar(*format);
 	}
-
-	return (len);
-}
-/**
- * print_unsigned_number - Prints an unsigned number
- * @n: unsigned integer to be printed
- * Return: The amount of numbers printed
- */
-int print_unsigned_number(unsigned int n)
-{
-	int div;
-	int len;
-	unsigned int num;
-
-	div = 1;
-	len = 0;
-
-	num = n;
-
-	for (; num / div > 9; )
-		div *= 10;
-
-	for (; div != 0; )
-	{
-		len += putchar('0' + num / div);
-		num %= div;
-		div /= 10;
-	}
-
-	return (len);
+      format++;
+    }
+  va_end(args);
 }

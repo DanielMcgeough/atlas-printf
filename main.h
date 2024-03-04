@@ -16,5 +16,5 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-
+void customPrint(const char *fromat, ...);
 #endif

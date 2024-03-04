@@ -1,12 +1,12 @@
 #include "main.h"
-
+#include "numbers.c"
 /**
  * _printf - prints whatever is fed into argument
  * @format: character strings
  * @...: whatever else we need to pass in
  * Return: returns the number of chars printed
  */
-
+void customPrint(const char *format, ...)
 int _printf(const char *format, ...)
 {
 	int chara_print = 0;
@@ -51,6 +51,10 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				chara_print++;
 			}
+			else if(*format == 'd' || *format == 'i')
+			  {
+			  customPrint(*format)
+			    }
 		}
 		format++;
 	}
