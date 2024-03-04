@@ -6,7 +6,7 @@
  * @...: whatever else we need to pass in
  * Return: returns the number of chars printed
  */
-void customPrint(const char *format, ...)
+
 int _printf(const char *format, ...)
 {
 	int chara_print = 0;
