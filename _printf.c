@@ -51,10 +51,6 @@ int _printf(const char *format, ...)
 			  _putchar('%');
 				chara_print++;
 			}
-			else if(*format == 'd' || *format == 'i')
-			  {
-			  customPrint(*format)
-			    }
 		}
 		format++;
 	}
