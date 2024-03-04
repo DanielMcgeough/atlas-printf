@@ -45,6 +45,6 @@ int print_num(va_list list_of_args)
 	  _putchar(str[i]);
 	  i--;
 	}
-      return(count);
     }
+      return(count);
 }
