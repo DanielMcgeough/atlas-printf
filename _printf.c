@@ -1,5 +1,5 @@
 #include "main.h"
-#include "numbers.c"
+
 /**
  * _printf - prints whatever is fed into argument
  * @format: character strings
