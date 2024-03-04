@@ -7,6 +7,25 @@
  * Return: returns the number of chars printed
  */
 
+void write_int(int num, int *chara_print) {
+	if (num < 0) {
+	    write_char('-', chara_print);
+	num = -num;
+    }
+
+    int divisor = 1;
+    while (num / divisor > 9) {
+	    divisor *= 10;
+    }
+
+    while (divisor != 0) {
+	    char digit = '0' + num / divisor;
+	write_char(digit, chara_print);
+	num %= divisor;
+	divisor /= 10;
+	}
+}
+
 int _printf(const char *format, ...)
 {
 	int chara_print = 0;
@@ -61,9 +80,8 @@ int _printf(const char *format, ...)
 				}
 			else if (*format == 'd' || *format == 'i')
 			  {
-			  int d = va_arg(list_of_args, int);
-			  write (1, &d, 4);
-			chara_print++;
+			  int num = va_arg(list_of_args, int);
+			  print_int(num, &chara_print);
 			  }
 		}
 		format++;
