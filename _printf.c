@@ -46,12 +46,14 @@ int _printf(const char *format, ...)
 				write(1, str, str_len);
 				chara_print += str_len;
 			}
-			else if(*format == '%')
+			/**
+			 * else if(*format == '%')
 			{
 				write(1, format, 1);
 				chara_print++;
 			}
-			else if (*format == '%' && *format + 1 == '\0')
+			*/
+			else if (*format == '%')
 			{
 				return (-1);
 			}
