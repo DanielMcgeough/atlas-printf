@@ -16,7 +16,7 @@
 #include <limits.h>
 
 int _printf(const char *format, ...);
-int _putchar(char c);
+int putchar(char c);
 void customPrint(const char *fromat, ...);
 int print_num(va_list list_of_args);
 #endif

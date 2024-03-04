@@ -76,12 +76,6 @@ int _printf(const char *format, ...)
 #include <stdlib.h>
 #include <limits.h>
 
-
-int _putchar(char c) 
-{
-    putchar(c);
-}
-
 int print_num(va_list list_of_args)
 {
     int num = va_arg(list_of_args, int);
@@ -113,7 +107,7 @@ int print_num(va_list list_of_args)
 
     for (i = count - 1; i >= 0; i--)
     {
-        _putchar(str[i]);
+        putchar(str[i]);
     }
 
     return count;
@@ -131,7 +125,7 @@ int _printf(const char *format, ...)
     {
         if (*format != '%')
         {
-            _putchar(*format);
+            putchar(*format);
             chara_print++;
         }
         else
@@ -144,7 +138,7 @@ int _printf(const char *format, ...)
             else if (*format == 'c')
             {
                 char c = va_arg(list_of_args, int);
-                _putchar(c);
+                putchar(c);
                 chara_print++;
             }
             else if (*format == 's')
@@ -154,7 +148,7 @@ int _printf(const char *format, ...)
                     str = "(null)";
                 while (*str != '\0')
                 {
-                    _putchar(*str);
+                    putchar(*str);
                     chara_print++;
                     str++;
                 }
@@ -163,13 +157,13 @@ int _printf(const char *format, ...)
             {
                 if (*(format + 1) == '%')
                 {
-                    _putchar('%');
+                    putchar('%');
                     chara_print++;
                     format++;
                 }
                 else
                 {
-                    _putchar('%');
+                    putchar('%');
                     chara_print++;
                 }
             }
@@ -184,7 +178,8 @@ int _printf(const char *format, ...)
     return chara_print;
 }
 
-int main() {
+int main() 
+{
     _printf("%d %c %s\n", 42, 'A', "Hello, World!");
     return 0;
 }
