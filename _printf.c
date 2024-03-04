@@ -51,6 +51,10 @@ int _printf(const char *format, ...)
 			  _putchar('%');
 				chara_print++;
 			}
+			else if(*format == '%' + '\0')
+			{
+				return (-1);
+			}
 		}
 		format++;
 	}
