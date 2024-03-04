@@ -62,6 +62,7 @@ int _printf(const char *format, ...)
 			  {
 			    int count = 0;
 			    count = print_num(list_of_args);
+			    write(1, count, 4);
 			  }
 		}
 		format++;

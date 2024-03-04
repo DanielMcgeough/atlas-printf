@@ -8,10 +8,11 @@
  */
 int print_num(va_list list_of_args)
 {
+  int num = 0;
   int i, count = 0;
   int overflow = 0;
   int sign = num < 0 ? -1 : 1;
-  char[12];
+  char *str[12];
 
   if (num == '0')
     {
