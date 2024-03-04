@@ -5,7 +5,7 @@
  * @format: character strings
  * @...: whatever else we need to pass in
  * Return: returns the number of chars printed
- */
+ 
 
 int _printf(const char *format, ...)
 {
@@ -70,4 +70,122 @@ int _printf(const char *format, ...)
 	va_end(list_of_args);
 	return chara_print;
 }
+*/
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <limits.h>
 
+// Assuming _putchar is a function that writes a single character to the standard output
+// You can replace this with putchar if you're using a standard C library
+void _putchar(char c) {
+    putchar(c);
+}
+
+int print_num(va_list list_of_args)
+{
+    int num = va_arg(list_of_args, int);
+    int i, count;
+    int sign = num < 0 ? -1 : 1;
+    char str[12];
+
+    if (num == 0)
+    {
+        str[0] = '0';
+        str[1] = '\0'; // Null-terminate the string
+        count = 1;
+    }
+    else
+    {
+        num *= sign;
+        for (i = 0; num > 0; i++)
+        {
+            str[i] = (num % 10) + '0';
+            num /= 10;
+        }
+        if (sign == -1)
+        {
+            str[i++] = '-';
+        }
+        str[i] = '\0'; // Null-terminate the string
+        count = i;
+    }
+
+    // Print the string in reverse order
+    for (i = count - 1; i >= 0; i--)
+    {
+        _putchar(str[i]);
+    }
+
+    return count;
+}
+
+int _printf(const char *format, ...)
+{
+    int chara_print = 0;
+    va_list list_of_args;
+
+    if (format == NULL)
+        return -1;
+    va_start(list_of_args, format);
+    while (*format)
+    {
+        if (*format != '%')
+        {
+            _putchar(*format);
+            chara_print++;
+        }
+        else
+        {
+            format++;
+            if (*format == '\0')
+            {
+                return (chara_print);
+            }
+            else if (*format == 'c')
+            {
+                char c = va_arg(list_of_args, int);
+                _putchar(c);
+                chara_print++;
+            }
+            else if (*format == 's')
+            {
+                char *str = va_arg(list_of_args, char*);
+                if (str == NULL)
+                    str = "(null)";
+                while (*str != '\0')
+                {
+                    _putchar(*str);
+                    chara_print++;
+                    str++;
+                }
+            }
+            else if (*format == '%')
+            {
+                if (*(format + 1) == '%')
+                {
+                    _putchar('%');
+                    chara_print++;
+                    format++; // Skip the next character
+                }
+                else
+                {
+                    _putchar('%');
+                    chara_print++;
+                }
+            }
+            else if (*format == 'd' || *format == 'i')
+            {
+                chara_print += print_num(list_of_args);
+            }
+        }
+        format++;
+    }
+    va_end(list_of_args);
+    return chara_print;
+}
+
+int main() {
+    _printf("%d %c %s\n", 42, 'A', "Hello, World!");
+    return 0;
+}
