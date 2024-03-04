@@ -57,7 +57,7 @@ int _printf(const char *format, ...)
 			{
 				write(1, format, 1);
 				chara_print++;
-				return (1);
+				return (-1);
 			}
 		}
 		format++;
