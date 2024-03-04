@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 			}
 			else if(*format == '%')
 			{
-				write(1, format, 1);
+			  _putchar('%');
 				chara_print++;
 			}
 			else if(*format == 'd' || *format == 'i')
