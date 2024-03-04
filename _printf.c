@@ -61,8 +61,8 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			  {
-			  int d = va_arg(list_of_args, int);
-			write (1, &d, 1);
+			  int d = va_arg(args, int);
+			  printf(%d, d);
 			chara_print++;
 			  }
 		}
