@@ -77,7 +77,8 @@ int _printf(const char *format, ...)
 #include <limits.h>
 
 
-int _putchar(char c) {
+int _putchar(char c) 
+{
     putchar(c);
 }
 
