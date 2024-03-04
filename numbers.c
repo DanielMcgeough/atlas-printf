@@ -32,7 +32,7 @@ int print_num(va_list list_of_args)
 		i++;
 	      }
 	    str[i] = (num % 10) + '0';
-	    num / 10;
+	    num/10;
 	  }
       if (sign == -1)
 	{
