@@ -47,18 +47,9 @@ int _printf(const char *format, ...)
 				chara_print += str_len;
 			}
 			else if(*format == '%')
-			{
-				if (*(format + 1) == '%') 
 				{
-					write(1, "%", 1);
-					chara_print++;
+					return (write(1, "%%", 1));
 				}
-				else
-				{
-					write(1, format, 1);
-					chara_print++;
-				}
-			}
 			else if (*format == 'd' || *format == 'i')
 			  {
 			  int d = va_arg(list_of_args, int);
