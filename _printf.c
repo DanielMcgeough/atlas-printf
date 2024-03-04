@@ -7,27 +7,6 @@
  * Return: returns the number of chars printed
  */
 
-void print_int(int num, int *chara_print) {
-    if (num < 0) {
-        write(1, "-", 1);
-        (*chara_print)++;
-        num = -num;
-    }
-
-    int divisor = 1;
-    while (num / divisor > 9) {
-        divisor *= 10;
-    }
-
-    while (divisor != 0) {
-        char digit = '0' + num / divisor;
-        write(1, &digit, 1);
-        (*chara_print)++;
-        num %= divisor;
-        divisor /= 10;
-    }
-}
-
 int _printf(const char *format, ...)
 {
 	int chara_print = 0;
