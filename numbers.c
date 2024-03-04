@@ -14,7 +14,7 @@ int print_num(va_list list_of_args)
   int sign = num < 0 ? -1 : 1;
   char str[12];
 
-  if (num == '0')
+  if (num == 0)
     {
       if (num == INT_MIN)
 	{
