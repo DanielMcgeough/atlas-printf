@@ -56,6 +56,7 @@ int _printf(const char *format, ...)
 					else
 					{
 						write(1, format, 1);
+						chara_print++;
 					}
 				}
 			else if (*format == 'd' || *format == 'i')
