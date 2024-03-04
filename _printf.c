@@ -5,7 +5,7 @@
  * @format: character strings
  * @...: whatever else we need to pass in
  * Return: returns the number of chars printed
- 
+*/ 
 
 int _printf(const char *format, ...)
 {
@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 	va_end(list_of_args);
 	return chara_print;
 }
-*/
+/**
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -183,3 +183,5 @@ int main()
     _printf("%d %c %s\n", 42, 'A', "Hello, World!");
     return 0;
 }
+*/
+
