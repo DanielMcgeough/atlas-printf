@@ -1,0 +1,26 @@
+char str[] = "strtok needs to be called several times to split a string";
+The words are separated by space. So space will be our delimiter.
+  char delim[] = " ";
+strtok accepts two strings - the first one is the the character of next token. 
+  char *ptr = strtok(str, delim);
+strtok needs to be called several times to split a string
+^
+ptr points here
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char str[] = "strtok needs to be called several times to split a string";
+	int init_size = strlen(str);
+	char delim[] = "ai";
+
+	char *ptr = strtok(str, delim);
+
+	while (ptr != NULL)
+	{
+		printf("'%s'\n", ptr);
+		ptr = strtok(NULL, delim);
+
+
+just an example of using strtok
